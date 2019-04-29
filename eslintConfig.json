@@ -1,26 +1,38 @@
 {
-  "author": "Abourass <abourassa@assetval.com>",
+    "devDependencies": {
+    "@getify/eslint-plugin-proper-arrows": "8.0.1",
+    "@getify/eslint-plugin-proper-ternary": "^3.0.1",
+    "eslint": "^5.16.0",
+    "eslint-config-airbnb-base": "^13.1.0",
+    "eslint-plugin-import": "^2.17.2",
+    "eslint-plugin-node": "^8.0.1",
+    "eslint-plugin-security": "^1.4.0",
+    "stylelint": "^10.0.1",
+    "stylelint-config-standard": "^18.3.0",
+    "stylelint-scss": "^3.6.0"
+  },
   "eslintConfig": {
     "plugins": [
-      "security"
+      "node",
+      "security",
+      "@getify/proper-ternary",
+      "@getify/proper-arrows"
     ],
     "extends": [
       "airbnb-base",
       "plugin:node/recommended",
       "plugin:security/recommended",
-      "@getify/proper-ternary"
+      "plugin:@getify/proper-ternary/getify-says",
+      "plugin:@getify/proper-arrows/getify-says"
     ],
     "env": {
       "shared-node-browser": true,
       "node": true,
       "es6": true,
       "mongo": true,
-      "jquery": true,
-      "jest": true
+      "jquery": true
     },
     "rules": {
-      "@getify/proper-ternary/nested": "error",
-      "@getify/proper-ternary/parens": "error",
       "arrow-parens": [
         "error",
         "as-needed"
@@ -61,19 +73,8 @@
       ],
       "prefer-destructuring": 0,
       "space-before-blocks": 0,
-      "space-before-function-paren": 0
+      "space-before-function-paren": 0,
+      "prefer-rest-params": 0
     }
-  },
-  "devDependencies": {
-    "eslint": "^5.15.1",
-    "eslint-config-airbnb-base": "^13.1.0",
-    "eslint-plugin-import": "^2.16.0",
-    "eslint-plugin-node": "^8.0.1",
-    "eslint-plugin-security": "^1.4.0",
-    "@getify/eslint-plugin-proper-ternary": "^1.0.2",
-    "nodemon": "^1.18.10",
-    "stylelint": "^9.10.1",
-    "stylelint-config-standard": "^18.2.0",
-    "stylelint-scss": "^3.5.4"
   }
 }
