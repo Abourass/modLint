@@ -1,29 +1,26 @@
 {
     "devDependencies": {
-    "@getify/eslint-plugin-proper-arrows": "8.0.1",
     "@getify/eslint-plugin-proper-ternary": "^3.0.1",
     "eslint": "^5.16.0",
     "eslint-config-airbnb-base": "^13.1.0",
     "eslint-plugin-import": "^2.17.2",
-    "eslint-plugin-node": "^8.0.1",
+    "eslint-plugin-node": "9.0.1",
     "eslint-plugin-security": "^1.4.0",
     "stylelint": "^10.0.1",
     "stylelint-config-standard": "^18.3.0",
-    "stylelint-scss": "^3.6.0"
+    "stylelint-scss": "3.6.1"
   },
   "eslintConfig": {
     "plugins": [
       "node",
       "security",
-      "@getify/proper-ternary",
-      "@getify/proper-arrows"
+      "@getify/proper-ternary"
     ],
     "extends": [
       "airbnb-base",
       "plugin:node/recommended",
       "plugin:security/recommended",
-      "plugin:@getify/proper-ternary/getify-says",
-      "plugin:@getify/proper-arrows/getify-says"
+      "plugin:@getify/proper-ternary/getify-says"
     ],
     "env": {
       "shared-node-browser": true,
@@ -76,5 +73,33 @@
       "space-before-function-paren": 0,
       "prefer-rest-params": 0
     }
-  }
+  },
+  "extends": "stylelint-config-standard",
+  "plugins": [
+    "stylelint-scss"
+  ],
+  "rules": {
+    "font-family-no-missing-generic-family-keyword": false,
+    "max-empty-lines": 2,
+    "unit-whitelist": ["px", "em", "rem", "%", "s", "deg", "vh", "vw", "ms"],
+    "media-feature-name-no-unknown": [true, {
+      "ignoreMediaFeatureNames": ["/^prefers-/", "custom"]
+    }],
+    "selector-list-comma-newline-after": "never-multi-line",
+    "comment-empty-line-before": "never",
+    "declaration-block-no-duplicate-properties": [true, {
+      "ignore": ["consecutive-duplicates"]
+    }],
+    "number-leading-zero": "never",
+    "no-descending-specificity": null,
+    "rule-empty-line-before": ["always", {
+      "except": ["after-single-line-comment", "inside-block-and-after-rule", "inside-block", "first-nested"]
+    }]
+  },
+  "browserslist": [
+    "last 2 version",
+    "> 1%",
+    "not ie <= 8",
+    "not dead"
+  ]
 }
