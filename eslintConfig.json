@@ -96,6 +96,12 @@
       "except": ["after-single-line-comment", "inside-block-and-after-rule", "inside-block", "first-nested"]
     }]
   },
+   "nodemonConfig": {
+    "events": {
+      "start": "cls || clear"
+    },
+    "ignore": ["log/"]
+  },
   "browserslist": [
     "last 2 version",
     "> 1%",
