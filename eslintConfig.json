@@ -7,11 +7,9 @@
     "eslint-plugin-import": "2.17.2",
     "eslint-plugin-node": "9.0.1",
     "eslint-plugin-security": "^1.4.0",
-    "nodemon": "1.19.0",
     "stylelint": "^10.0.1",
     "stylelint-config-standard": "^18.3.0",
-    "stylelint-scss": "3.6.1",
-    "supports-color": "6.1.0"
+    "stylelint-scss": "3.6.1"
   },
   "eslintConfig": {
     "plugins": [
@@ -79,10 +77,11 @@
         "error",
         "consistent"
       ],
-      "prefer-destructuring": 0,
-      "space-before-blocks": 0,
+      "prefer-destructuring": "off",
+      "space-before-blocks": "off",
       "space-before-function-paren": ["error", "never"],
-      "prefer-rest-params": 0
+      "prefer-rest-params": "off",
+      "import/newline-after-import": "off"
     }
   },
   "extends": "stylelint-config-standard",
