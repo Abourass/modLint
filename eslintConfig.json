@@ -11,7 +11,7 @@
     "stylelint-config-standard": "^18.3.0",
     "stylelint-scss": "3.6.1"
   },
-  "eslintConfig": {
+ "eslintConfig": {
     "plugins": [
       "node",
       "security",
@@ -61,6 +61,39 @@
       "max-len": "off",
       "no-unused-expressions": "off",
       "no-console": "off",
+      "no-shadow": [
+        "error",
+        {
+          "hoist": "never",
+          "allow": [
+            "done",
+            "resolve",
+            "err",
+            "error",
+            "cb",
+            "User",
+            "user",
+            "issue"
+          ]
+        }
+      ],
+      "no-param-reassign": [
+        "error",
+        {
+          "props": true,
+          "ignorePropertyModificationsFor": [
+            "realtor",
+            "tempRealtor",
+            "counters",
+            "user",
+            "selectedUser",
+            "client",
+            "employee",
+            "issue",
+            "res"
+          ]
+        }
+      ],
       "no-lonely-if": "error",
       "no-new-object": "error",
       "object-curly-newline": [
@@ -72,68 +105,76 @@
         }
       ],
       "no-underscore-dangle": "off",
-      "object-curly-spacing": ["error", "never"],
+      "object-curly-spacing": [
+        "error",
+        "never"
+      ],
       "object-shorthand": [
         "error",
         "consistent"
       ],
       "prefer-destructuring": "off",
       "space-before-blocks": "off",
-      "space-before-function-paren": ["error", "never"],
+      "space-before-function-paren": [
+        "error",
+        "never"
+      ],
       "prefer-rest-params": "off",
       "import/newline-after-import": "off"
     }
   },
-  "extends": "stylelint-config-standard",
-  "plugins": [
-    "stylelint-scss"
-  ],
-  "rules": {
-    "font-family-no-missing-generic-family-keyword": false,
-    "max-empty-lines": 2,
-    "unit-whitelist": [
-      "px",
-      "em",
-      "rem",
-      "%",
-      "s",
-      "deg",
-      "vh",
-      "vw",
-      "ms"
+  "stylelint": {
+    "extends": "stylelint-config-standard",
+    "plugins": [
+      "stylelint-scss"
     ],
-    "media-feature-name-no-unknown": [
-      true,
-      {
-        "ignoreMediaFeatureNames": [
-          "/^prefers-/",
-          "custom"
-        ]
-      }
-    ],
-    "selector-list-comma-newline-after": "never-multi-line",
-    "comment-empty-line-before": "never",
-    "declaration-block-no-duplicate-properties": [
-      true,
-      {
-        "ignore": [
-          "consecutive-duplicates"
-        ]
-      }
-    ],
-    "number-leading-zero": "never",
-    "no-descending-specificity": null,
-    "rule-empty-line-before": [
-      "always",
-      {
-        "except": [
-          "after-single-line-comment",
-          "inside-block-and-after-rule",
-          "inside-block",
-          "first-nested"
-        ]
-      }
-    ]
+    "rules": {
+      "font-family-no-missing-generic-family-keyword": false,
+      "max-empty-lines": 2,
+      "unit-whitelist": [
+        "px",
+        "em",
+        "rem",
+        "%",
+        "s",
+        "deg",
+        "vh",
+        "vw",
+        "ms"
+      ],
+      "media-feature-name-no-unknown": [
+        true,
+        {
+          "ignoreMediaFeatureNames": [
+            "/^prefers-/",
+            "custom"
+          ]
+        }
+      ],
+      "selector-list-comma-newline-after": "never-multi-line",
+      "comment-empty-line-before": "never",
+      "declaration-block-no-duplicate-properties": [
+        true,
+        {
+          "ignore": [
+            "consecutive-duplicates"
+          ]
+        }
+      ],
+      "number-leading-zero": "never",
+      "no-descending-specificity": null,
+      "rule-empty-line-before": [
+        "always",
+        {
+          "except": [
+            "after-single-line-comment",
+            "inside-block-and-after-rule",
+            "inside-block",
+            "first-nested"
+          ]
+        }
+      ]
+    }
   },
   "nodemonConfig": {
     "events": {
